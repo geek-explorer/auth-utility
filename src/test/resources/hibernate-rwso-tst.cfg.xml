@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@//amksx91185.amk.st.com:1514/rwsocam.amk.st.com</property>
+        <property name="hibernate.connection.username">rwso</property>
+        <property name="hibernate.connection.password">rwso_appuser_12345</property>
+
+        <property name="hibernate.connection.pool_size">1</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+        <property name="show_sql">true</property>
+
+
+        <property name="c3p0.min_size">5</property>
+        <property name="c3p0.max_size">20</property>
+        <property name="c3p0.timeout">600</property>
+        <property name="c3p0.max_statements">50</property>
+        <property name="c3p0.idle_test_period">600</property>
+        <property name="connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+
+        <property name="hibernate.current_session_context_class">thread</property>
+
+
+        <!-- Mapping files -->
+        <mapping class="com.st.dit.cam.auth.model.Application"/>
+        <mapping class="com.st.dit.cam.auth.model.ApplicationUser"/>
+        <mapping class="com.st.dit.cam.auth.model.Role"/>
+        <mapping class="com.st.dit.cam.auth.model.UserRoles"/>
+    </session-factory>
+</hibernate-configuration>
